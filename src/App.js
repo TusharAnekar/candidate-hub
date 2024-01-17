@@ -1,12 +1,17 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Login } from "./pages/Login";
+import { Home } from "./pages/Home";
+import { Header } from "./components/Header";
+import { Candidate } from "./pages/Candidate";
 
 function App() {
+  const location = useLocation();
+
   return (
     <div className="App">
       <ToastContainer
@@ -22,8 +27,12 @@ function App() {
         theme="light"
       />
 
+      {location.pathname !== "/login" && <Header />}
+
       <Routes>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="" element={<Home />}></Route>
+        <Route path="/candidate/:candidateId" element={<Candidate />}></Route>
       </Routes>
     </div>
   );
