@@ -16,7 +16,7 @@ const CandidateDetails = ({ candidate }) => {
   } = candidate;
 
   const handleEdit = (id) => {
-    editCandidate(id);
+    // editCandidate(id);
   };
 
   const handleDelete = (id) => {
@@ -62,12 +62,17 @@ const CandidateDetails = ({ candidate }) => {
           <span className="font-semibold">Gender: </span>
           {gender}
         </p>
-        <ul className="flex gap-2">
+        <p>
+          <span className="font-semibold">Hobbies: </span>
+          {hobbies}
+        </p>
+
+        {/* <ul className="flex gap-2">
           <p className="font-semibold">Hobbies:</p>
           {hobbies?.map((hobbie) => (
             <li>{hobbie}</li>
           ))}
-        </ul>
+        </ul> */}
       </section>
 
       <section className="mt-4">
