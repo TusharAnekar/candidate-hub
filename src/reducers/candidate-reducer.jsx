@@ -1,5 +1,7 @@
 const initialCandidates = {
   originalCandidates: [],
+  isCandidateEdit: false,
+  candidateToEdit: {},
 };
 
 const candidatesReducer = (state, { type, payload }) => {
@@ -20,6 +22,10 @@ const candidatesReducer = (state, { type, payload }) => {
       };
     case "EDIT_CANDIDATE":
       return { ...state };
+    case "TOGGLE_IS_CANDIDATE_EDIT":
+      return { ...state, isCandidateEdit: !state.isCandidateEdit };
+    case "SET_CANDIDATE_TO_EDIT":
+      return { ...state, candidateToEdit: payload };
     default:
       return state;
   }
