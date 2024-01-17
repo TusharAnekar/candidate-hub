@@ -11,6 +11,15 @@ const candidatesReducer = (state, { type, payload }) => {
         ...state,
         originalCandidates: [...state.originalCandidates, payload],
       };
+    case "DELETE_CANDIDATE":
+      return {
+        ...state,
+        originalCandidates: state.originalCandidates.filter(
+          ({ id }) => id !== payload.id,
+        ),
+      };
+    case "EDIT_CANDIDATE":
+      return { ...state };
     default:
       return state;
   }

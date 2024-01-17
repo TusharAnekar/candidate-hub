@@ -1,5 +1,10 @@
+import { useCandidateContext } from "../contexts/candidate-context";
+
 const CandidateDetails = ({ candidate }) => {
+  const { deleteCandidate, editCandidate } = useCandidateContext();
+
   const {
+    id,
     profile_picture,
     name,
     email,
@@ -10,11 +15,34 @@ const CandidateDetails = ({ candidate }) => {
     experience,
   } = candidate;
 
-  console.log(candidate);
+  const handleEdit = (id) => {
+    editCandidate(id);
+  };
+
+  const handleDelete = (id) => {
+    deleteCandidate(id);
+  };
 
   return (
     <div className="p-4">
-      <h2 className="text-xl font-bold">Candidate Details</h2>
+      <div className="flex justify-between ">
+        <h2 className="text-xl font-bold">Candidate Details</h2>
+
+        <div className="flex gap-2">
+          <button
+            className="rounded-lg bg-yellow-500 px-2 py-1 text-white"
+            onClick={() => handleEdit(id)}
+          >
+            Edit
+          </button>
+          <button
+            className="rounded-lg bg-red-600 px-2 py-1 text-white"
+            onClick={() => handleDelete(id)}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
 
       <section>
         <h3 className="text-lg font-semibold">Part 1</h3>
@@ -36,7 +64,7 @@ const CandidateDetails = ({ candidate }) => {
         </p>
         <ul className="flex gap-2">
           <p className="font-semibold">Hobbies:</p>
-          {hobbies.map((hobbie) => (
+          {hobbies?.map((hobbie) => (
             <li>{hobbie}</li>
           ))}
         </ul>
