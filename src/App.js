@@ -8,6 +8,7 @@ import { Login } from "./pages/Login";
 import { Home } from "./pages/Home";
 import { Header } from "./components/Header";
 import { Candidate } from "./pages/Candidate";
+import { NewCandidate } from "./pages/NewCandidate";
 
 function App() {
   const location = useLocation();
@@ -33,6 +34,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="" element={<Home />}></Route>
         <Route path="/candidate/:candidateId" element={<Candidate />}></Route>
+        <Route path="/candidate/new" element={<NewCandidate />}></Route>
       </Routes>
     </div>
   );

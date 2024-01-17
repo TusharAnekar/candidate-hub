@@ -13,7 +13,7 @@ const Candidate = () => {
   const candidate = originalCandidates.find(({ id }) => id === candidateId);
 
   return (
-    <div className="grid grid-rows-2 md:grid-cols-2">
+    <div className="grid grid-rows-2 p-4 md:grid-cols-2">
       <CandidatesList />
       <CandidateDetails candidate={candidate} />
     </div>

@@ -10,6 +10,8 @@ const CandidateDetails = ({ candidate }) => {
     experience,
   } = candidate;
 
+  console.log(candidate);
+
   return (
     <div className="p-4">
       <h2 className="text-xl font-bold">Candidate Details</h2>

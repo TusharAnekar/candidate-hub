@@ -7,7 +7,7 @@ const CandidatesList = () => {
   } = useCandidateContext();
 
   return (
-    <div className="flex flex-col gap-4 p-4">
+    <div className="flex flex-col gap-4">
       {originalCandidates.map((candidate) => (
         <CandidateCard candidate={candidate} key={candidate.id} />
       ))}
