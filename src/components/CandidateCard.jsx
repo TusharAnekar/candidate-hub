@@ -11,7 +11,7 @@ const CandidateCard = ({ candidate }) => {
 
   return (
     <div
-      className="flex w-full gap-4 truncate rounded-md border p-4"
+      className="flex w-full cursor-pointer gap-4 truncate rounded-md border p-4"
       onClick={handleCandidate}
     >
       <img

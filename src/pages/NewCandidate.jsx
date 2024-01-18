@@ -78,10 +78,10 @@ const NewCandidate = () => {
   };
 
   return (
-    <div className="flex-col gap-4 p-4 md:grid md:grid-cols-2">
+    <div className="flex flex-col gap-4 p-4 md:grid md:grid-cols-2">
       <CandidatesList />
 
-      <div>
+      <div className="max-sm:order-first">
         <h2 className="text-xl font-bold">Candidate Details</h2>
         <form onSubmit={handleSubmit}>
           <section>

@@ -13,8 +13,10 @@ const Candidate = () => {
   const candidate = originalCandidates.find(({ id }) => id === candidateId);
 
   return (
-    <div className="grid grid-rows-2 p-4 md:grid-cols-2">
-      <CandidatesList />
+    <div className="flex flex-col gap-4 p-4 md:grid md:grid-cols-2 md:gap-4">
+      <div className="max-sm:order-last">
+        <CandidatesList />
+      </div>
       <CandidateDetails candidate={candidate} />
     </div>
   );
