@@ -20,12 +20,22 @@ const candidatesReducer = (state, { type, payload }) => {
           ({ id }) => id !== payload.id,
         ),
       };
-    case "EDIT_CANDIDATE":
-      return { ...state };
     case "TOGGLE_IS_CANDIDATE_EDIT":
-      return { ...state, isCandidateEdit: !state.isCandidateEdit };
+      return {
+        ...state,
+        isCandidateEdit: state.isCandidateEdit ? false : true,
+      };
     case "SET_CANDIDATE_TO_EDIT":
       return { ...state, candidateToEdit: payload };
+    case "EDIT_CANDIDATE":
+      return {
+        ...state,
+        originalCandidates: state.originalCandidates.map((candidate) =>
+          candidate.id === payload.id
+            ? Object.assign(candidate, payload)
+            : candidate,
+        ),
+      };
     default:
       return state;
   }

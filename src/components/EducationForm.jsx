@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const EducationForm = ({ candidateDetails, setCandidateDetails }) => {
+const EducationForm = ({
+  candidateDetails,
+  setCandidateDetails,
+  education,
+}) => {
   const [educationDetails, setEducationDetails] = useState({
-    degree: "",
-    institute: "",
-    pass_out_year: 0,
-    percentage: 0,
+    degree: education ? education.degree : "",
+    institute: education ? education.institute : "",
+    pass_out_year: education ? education.pass_out_year : "",
+    percentage: education ? education.percentage : "",
   });
 
   const handleInput = (e) => {

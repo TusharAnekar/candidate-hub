@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const ExperienceForm = ({ candidateDetails, setCandidateDetails }) => {
+const ExperienceForm = ({ candidateDetails, setCandidateDetails, exp }) => {
   const [experienceDetails, setExperienceDetails] = useState({
-    company: "",
-    duration_from: "",
-    duration_to: "",
-    project: "",
-    role: "",
-    team_size: 0,
+    company: exp ? exp.company : "",
+    duration_from: exp ? exp.duration_from : "",
+    duration_to: exp ? exp.duration_to : "",
+    project: exp ? exp.project : "",
+    role: exp ? exp.role : "",
+    team_size: exp ? exp.team_size : 0,
   });
 
   const handleInput = (e) => {

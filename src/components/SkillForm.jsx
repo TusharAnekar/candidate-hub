@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const SkillForm = ({ candidateDetails, setCandidateDetails }) => {
-  const [skillDetails, setSkillDetails] = useState({ name: "", experience: 0 });
+const SkillForm = ({ candidateDetails, setCandidateDetails, skill }) => {
+  const [skillDetails, setSkillDetails] = useState({
+    name: skill ? skill.name : "",
+    experience: skill ? skill.experience : 0,
+  });
 
   const handleInput = (e) => {
     setSkillDetails({

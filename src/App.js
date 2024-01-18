@@ -9,6 +9,7 @@ import { Home } from "./pages/Home";
 import { Header } from "./components/Header";
 import { Candidate } from "./pages/Candidate";
 import { NewCandidate } from "./pages/NewCandidate";
+import { RequiresAuth } from "./components/RequiresAuth";
 
 function App() {
   const location = useLocation();
@@ -32,9 +33,30 @@ function App() {
 
       <Routes>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="" element={<Home />}></Route>
-        <Route path="/candidate/:candidateId" element={<Candidate />}></Route>
-        <Route path="/candidate/new" element={<NewCandidate />}></Route>
+        <Route
+          path=""
+          element={
+            <RequiresAuth>
+              <Home />
+            </RequiresAuth>
+          }
+        ></Route>
+        <Route
+          path="/candidate/:candidateId"
+          element={
+            <RequiresAuth>
+              <Candidate />
+            </RequiresAuth>
+          }
+        ></Route>
+        <Route
+          path="/candidate/new"
+          element={
+            <RequiresAuth>
+              <NewCandidate />
+            </RequiresAuth>
+          }
+        ></Route>
       </Routes>
     </div>
   );

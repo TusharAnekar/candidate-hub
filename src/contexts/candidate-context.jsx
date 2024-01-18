@@ -11,6 +11,7 @@ import {
   initialCandidates,
 } from "../reducers/candidate-reducer";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const CandidateContext = createContext();
 
@@ -44,13 +45,14 @@ const CandidateProvider = ({ children }) => {
   const createCandidate = async (candidateDetails) => {
     try {
       const response = await createCandidateService(candidateDetails);
-      console.log(response);
       const { data, status } = response;
 
       if (status === 201) {
         setCandidates({ type: "ADD_CANDIDATE", payload: data });
+        toast.success("Candidate added successfully!");
+        navigate("");
       } else {
-        console.log("Error while creating/adding candidate.");
+        toast.error("Error while creating/adding candidate.");
       }
     } catch (error) {
       console.error(error);
@@ -64,19 +66,29 @@ const CandidateProvider = ({ children }) => {
 
       if (status === 200) {
         setCandidates({ type: "DELETE_CANDIDATE", payload: data });
+        toast.success("Candidate deleted successfully!");
         navigate("");
       } else {
-        console.log("Error while deleting data.");
+        toast.error("Error while deleting data.");
       }
     } catch (error) {
       console.error(error);
     }
   };
 
-  const editCandidate = async (id) => {
+  const editCandidate = async (candidateDetails) => {
     try {
-      const response = await editCandidateService(id);
+      const response = await editCandidateService(candidateDetails.id);
       console.log(response);
+      const { data, status } = response;
+
+      if (status === 200) {
+        setCandidates({ type: "EDIT_CANDIDATE", payload: data });
+        toast.success("Candidate details edited successfully");
+        navigate(`/candidate/${data.id}`);
+      } else {
+        toast.error("Error while editing candidate.");
+      }
     } catch (error) {
       console.error(error);
     }
