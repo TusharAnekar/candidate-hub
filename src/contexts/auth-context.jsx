@@ -24,6 +24,7 @@ const AuthProvider = ({ children }) => {
     localStorage.clear();
     setEmail("");
     navigate("/login");
+    toast.error("Logged out successfully!");
   };
 
   return (
