@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const EditCandidateForm = () => {
   const {
-    candidates: { candidateToEdit, isCandidateEdit },
+    candidates: { candidateToEdit },
     setCandidates,
     editCandidate,
   } = useCandidateContext();
