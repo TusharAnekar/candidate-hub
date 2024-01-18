@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Candidate Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Link - https://candidate-hub.netlify.app/login
 
-## Available Scripts
+A web app managing candidates who are applying for companies.
 
-In the project directory, you can run:
+## INSTALLATION
 
-### `npm start`
+```
+1. git clone https://github.com/TusharAnekar/candidate-hub.git
+2. cd candidate-hub
+3. npm install
+4. npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Pages and Features -
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Login Page
 
-### `npm test`
+- Login with test user.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Home Page
 
-### `npm run build`
+- Header
+- List of all candidates.
+- Add Button
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### New Candidate Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Header
+- List of all candidates.
+- Form for new candidate.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Candidate Detail Page
 
-### `npm run eject`
+- Header
+- List of all candidates.
+- Edit Candidate.
+  - Form to edit candidate details.
+  - Cancel edit.
+- Delete Candidate
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### [Other Features]
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Logout
+- Toasts
+- Responsive
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Built with -
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- React JS
+- React Context API + useReducer
+- React Router v6
+- TailwindCSS
+- Material UI icons
+- React Toastify
 
-## Learn More
+### BACKEND
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Get all candidates: GET
+- https://60d5a2c2943aa60017768b01.mockapi.io/candidate
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Create a candidate: POST
+- https://60d5a2c2943aa60017768b01.mockapi.io/candidate
 
-### Code Splitting
+- Update a candidate: PUT
+- https://60d5a2c2943aa60017768b01.mockapi.io/candidate/<candidate_id>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Delete a candidate: DELETE
+- https://60d5a2c2943aa60017768b01.mockapi.io/candidate/<candidate_id>
