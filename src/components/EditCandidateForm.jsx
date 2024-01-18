@@ -78,7 +78,10 @@ const EditCandidateForm = () => {
     }
   };
 
-  console.log(isCandidateEdit);
+  const handleCancel = () => {
+    setCandidates({ type: "TOGGLE_IS_CANDIDATE_EDIT" });
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -218,12 +221,20 @@ const EditCandidateForm = () => {
         ))}
       </>
 
-      <button
-        className="w-full rounded-lg bg-orange-600 p-2 text-white"
-        onClick={handleEditDetails}
-      >
-        Edit Details
-      </button>
+      <div className="flex justify-between gap-4">
+        <button
+          className="w-full rounded-lg bg-orange-600 p-2 text-white"
+          onClick={handleEditDetails}
+        >
+          Edit Details
+        </button>
+        <button
+          className="w-full rounded-lg bg-red-600 p-2 text-white"
+          onClick={handleCancel}
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   );
 };
