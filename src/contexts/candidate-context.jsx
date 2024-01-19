@@ -43,8 +43,10 @@ const CandidateProvider = ({ children }) => {
   }, []);
 
   const createCandidate = async (candidateDetails) => {
+    console.log("new form", candidateDetails);
     try {
       const response = await createCandidateService(candidateDetails);
+      console.log(response);
       const { data, status } = response;
 
       if (status === 201) {
@@ -77,8 +79,9 @@ const CandidateProvider = ({ children }) => {
   };
 
   const editCandidate = async (candidateDetails) => {
+    console.log(candidateDetails, "edit form");
     try {
-      const response = await editCandidateService(candidateDetails.id);
+      const response = await editCandidateService(candidateDetails);
       console.log(response);
       const { data, status } = response;
 
